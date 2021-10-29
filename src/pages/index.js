@@ -1,30 +1,12 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import { Link, useStaticQuery, graphql } from 'gatsby';
-import Seo from '../components/seo.js';
+import * as React from 'react';
+import { Link } from 'gatsby';
+import Layout from '../components/layout';
 const IndexPage = () => {
-  const data = useStaticQuery(graphql`
-    query GetSiteTitle {
-      site {
-        siteMetadata {
-          title
-        }
-      }
-    }
-  `);
-
-  const meta = data?.site?.siteMetadata ?? {};
   return (
-    <>
-      <Seo />
-      <header>
-        <Link to="/">{meta.title}</Link>
-      </header>
-      <main>
-        <h1>Hello</h1>
-        <Link to="/about">About</Link>
-      </main>
-    </>
+    <Layout>
+      <h1>Hello frontend masters</h1>
+      <Link to="/about">about this site</Link>
+    </Layout>
   );
 };
 
