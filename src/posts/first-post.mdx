@@ -1,9 +1,30 @@
 ---
-date: 2021-10-29
+date: 2021-10-28
 title: first post
 description: this is my post
 ---
 
+import { graphql } from 'gatsby';
+import { GatsbyImage, getImage } from 'gatsby-plugin-image';
+
+export const query = graphql`
+  query GetBurgerImage {
+    file(name: { eq: "smashburger" }) {
+      childImageSharp {
+        gatsbyImageData(placeholder: DOMINANT_COLOR)
+      }
+    }
+  }
+`;
+
 ## this is my first post
 
+```js
+this.isLine(1);
+this.isLine(2);
+```
+
+<GatsbyImage image={getImage(props.data.file)} alt="Burger image" />
+
+![burger](../images/smashburger.jpg)
 first post
